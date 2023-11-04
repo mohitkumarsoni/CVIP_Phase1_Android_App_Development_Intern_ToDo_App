@@ -20,6 +20,6 @@ public interface Dao {
     @Delete
     public void deleteTodo(Todo todo);
     @Query("SELECT * FROM todo_app")
-    public LiveData<List<Todo>> getAllTodo(Todo todo);
+    public LiveData<List<Todo>> getAllTodo();
 
 }
