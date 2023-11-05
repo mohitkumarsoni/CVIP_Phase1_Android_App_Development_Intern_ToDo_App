@@ -69,9 +69,10 @@
                 tools:text="@string/app_name"
                 android:textColor="@color/black"
                 android:padding="8dp"
+                android:maxHeight="300dp"
                 android:background="@drawable/input_bg"
                 android:textSize="18sp"
-                android:inputType="text"/>
+                android:inputType="textMultiLine"/>
         </LinearLayout>
     </androidx.cardview.widget.CardView>
 
