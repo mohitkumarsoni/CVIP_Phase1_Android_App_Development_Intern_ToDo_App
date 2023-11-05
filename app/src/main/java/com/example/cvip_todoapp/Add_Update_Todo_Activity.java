@@ -22,6 +22,7 @@ public class Add_Update_Todo_Activity extends AppCompatActivity {
 
         String type = getIntent().getStringExtra("type");
 
+        // if user is in Add Mode
         if (Objects.requireNonNull(type).equals("new_todo")){
             Objects.requireNonNull(getSupportActionBar()).setTitle("Add New Todo");
 
@@ -38,7 +39,28 @@ public class Add_Update_Todo_Activity extends AppCompatActivity {
 
         }
 
-        if (Objects.requireNonNull(type).equals("update_todo"));
+        // if user is in Update Mode
+        if (Objects.requireNonNull(type).equals("update_todo")){
+            Objects.requireNonNull(getSupportActionBar()).setTitle("Update Todo");
+
+            int id = getIntent().getIntExtra("id",0);
+
+            binding.titleEt.setText( getIntent().getStringExtra("title") );
+            binding.descriptionEt.setText( getIntent().getStringExtra("description") );
+
+            binding.btnSave.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent intent = new Intent();
+                    intent.putExtra("id", id);
+                    intent.putExtra("title", binding.titleEt.getText().toString().trim() );
+                    intent.putExtra("description", binding.descriptionEt.getText().toString().trim() );
+                    setResult(RESULT_OK, intent);
+                    finish();
+                }
+            });
+
+        }
 
     }
 }
