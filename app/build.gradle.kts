@@ -6,6 +6,10 @@ android {
     namespace = "com.example.cvip_todoapp"
     compileSdk = 34
 
+    viewBinding {
+        enable = true
+    }
+
     defaultConfig {
         applicationId = "com.example.cvip_todoapp"
         minSdk = 26

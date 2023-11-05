@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">CVIP_ ToDoApp</string>
+    <string name="demo_txt">Once the update operation is finished, the thread will not do anything to update the UI. This is because you are not using the Handler object to post a message to the main thread</string>
 </resources>
