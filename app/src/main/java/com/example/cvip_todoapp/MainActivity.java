@@ -100,6 +100,13 @@ public class MainActivity extends AppCompatActivity {
                             finish();
                         }
                     });
+                    builder.setOnCancelListener(new DialogInterface.OnCancelListener() {
+                        @Override
+                        public void onCancel(DialogInterface dialogInterface) {
+                            startActivity(getIntent());
+                            finish();
+                        }
+                    });
                     builder.show().create();
                 }
 

@@ -7,17 +7,18 @@ import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 
 import com.example.cvip_todoapp.model_entity.Todo;
+import com.example.cvip_todoapp.repository.Repository;
 import com.example.cvip_todoapp.repository.Todo_Repository;
 
 import java.util.List;
 
 public class Todo_ViewModel extends AndroidViewModel {
-    private Todo_Repository repository;
+    private Repository repository;
     private LiveData<List<Todo>> todoLiveList;
 
     public Todo_ViewModel(@NonNull Application application) {
         super(application);
-        repository = new Todo_Repository(application);
+        repository = new Repository(application);
         todoLiveList = repository.getTodoList();
     }
 
